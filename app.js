@@ -19,8 +19,12 @@ var starbucks = {
 console.log(starbucks)
 
 var order = prompt("Введите название напитка")
-if (order in starbucks.coffee || order in starbucks.tea) {
-    console.log("Ваш заказ принят");
-} else {
-    console.log('Not found');
+if ((order in starbucks.coffee && starbucks.coffee[order]) || order in starbucks.tea && starbucks.tea[order]) {
+   alert("Ваш заказ принят");
+} else if (starbucks.coffee[order] === false || starbucks.tea[order] === false){
+    alert(order + ' нет в налии!')
 }
+else {
+    alert('Not found');
+}
+location.reload()
