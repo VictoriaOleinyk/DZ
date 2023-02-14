@@ -1,42 +1,49 @@
-var arr = [
-  null,
-  123,
-  undefined,
-  null,
-  "qwerty",
-  34,
-  65,
-  undefined,
-  null,
-  null,
-  43,
-  "aerg",
-  999,
-  true,
-  "пкцйк",
-];
-var arrString = [];
-var arrNumber = [];
-var arrUnder = [];
-var arrNull = [];
-var arrBool = [];
-var arrSim = [];
-var rezalt = [];
-for (var i of arr) {
-  if (typeof i == "string") arrString.push(i);
-  else if (typeof i == "number") arrNumber.push(i);
-  else if (typeof i == "undefined") arrUnder.push(i);
-  else if (typeof i == "boolean") arrBool.push(i);
-  else if (typeof i == "simbol") arrSim.push(i);
-  else if (i == null) arrNull.push(i);
-}
-console.log(rezalt);
+var tag = [
+    'li',
+    'span',
+    'h3',
+    'a',
+    'div',
+    'span',
+    'a',
+    'li',
+    'div',
+    'div'
+]
 
-if (arrBool.length > 0) rezalt.push(arrBool);
-if (arrString.length > 0) rezalt.push(arrString);
-if (arrNumber.length > 0) rezalt.push(arrNumber);
-if (arrUnder.length > 0) rezalt.push(arrUnder);
-if (arrNull.length > 0) rezalt.push(arrNull);
-if (arrSim.length > 0) rezalt.push(arrSim);
-rezalt.sort((a, b) => b.length - a.length);
-console.log(rezalt);
+var res = {}
+
+for (var i = 0; i < tag.length; i++) {
+
+    if (tag[i] in res) {
+        res[tag[i]]++
+    } else {
+        res[tag[i]] = 1
+    }
+}
+
+console.log(res)
+var sorted = Object.keys(res)
+sorted.sort((a, b) => res[b] - res[a])
+console.log(sorted)
+
+
+var Jonh = [
+    "name",
+    "John",
+    "lastname",
+    "Black",
+    "age",
+    "23"
+]
+
+result = {}
+for (var i = 0; i < Jonh.length; i++) {
+    if (i % 2 === 0) {
+        result[Jonh[i]] = Jonh[i + 1]
+    }
+}
+
+console.log(result)
+
+
