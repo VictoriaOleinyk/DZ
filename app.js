@@ -1,49 +1,28 @@
-var tag = [
-    'li',
-    'span',
-    'h3',
-    'a',
-    'div',
-    'span',
-    'a',
-    'li',
-    'div',
-    'div'
-]
 
-var res = {}
-
-for (var i = 0; i < tag.length; i++) {
-
-    if (tag[i] in res) {
-        res[tag[i]]++
-    } else {
-        res[tag[i]] = 1
+function reverseString(string) {
+    let newString = '';
+    for (let i = string.length - 1; i >= 0; i--) {
+        newString += string[i];
     }
+    return newString;
 }
 
-console.log(res)
-var sorted = Object.keys(res)
-sorted.sort((a, b) => res[b] - res[a])
-console.log(sorted)
+console.log(reverseString('hello'));
 
-
-var Jonh = [
-    "name",
-    "John",
-    "lastname",
-    "Black",
-    "age",
-    "23"
-]
-
-result = {}
-for (var i = 0; i < Jonh.length; i++) {
-    if (i % 2 === 0) {
-        result[Jonh[i]] = Jonh[i + 1]
+let bookList = function (book_names){
+    let newBookList = []
+    let newBookList2 = []
+    for (const name of book_names) {
+        if (name.includes('u'))
+            newBookList.push(name)
+        else
+            newBookList2.push(name)
     }
+    return [newBookList, newBookList2]
 }
 
-console.log(result)
-
+let splitted =  bookList(['Ann', 'Jain Air', 'Pride and Prejudice'])
+for (const splittedElement of splitted) {
+    console.log(splittedElement)
+}
 
