@@ -1,28 +1,25 @@
+const nums =  document.getElementById("counter_value");
+const buttonInc = document.getElementById("button_inc")
+const buttonDec = document.getElementById("button_dec")
+let counterValue = 0
 
-function reverseString(string) {
-    let newString = '';
-    for (let i = string.length - 1; i >= 0; i--) {
-        newString += string[i];
-    }
-    return newString;
+function disableButtons (){
+    buttonInc.disabled = counterValue >= 10
+    buttonDec.disabled = counterValue <= -10
 }
 
-console.log(reverseString('hello'));
 
-let bookList = function (book_names){
-    let newBookList = []
-    let newBookList2 = []
-    for (const name of book_names) {
-        if (name.includes('u'))
-            newBookList.push(name)
-        else
-            newBookList2.push(name)
-    }
-    return [newBookList, newBookList2]
+function  counterIncrement () {
+    nums.value = ++counterValue
+    disableButtons()
 }
 
-let splitted =  bookList(['Ann', 'Jain Air', 'Pride and Prejudice'])
-for (const splittedElement of splitted) {
-    console.log(splittedElement)
+function  counterDecrement () {
+    nums.value = --counterValue
+    disableButtons()
 }
+
+buttonInc.onclick = counterIncrement
+buttonDec.onclick = counterDecrement
+
 
