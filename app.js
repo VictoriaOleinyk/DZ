@@ -1,25 +1,44 @@
-const nums =  document.getElementById("counter_value");
-const buttonInc = document.getElementById("button_inc")
-const buttonDec = document.getElementById("button_dec")
-let counterValue = 0
+let operation;
 
-function disableButtons (){
-    buttonInc.disabled = counterValue >= 10
-    buttonDec.disabled = counterValue <= -10
+function func() {
+    let result;
+    let num1 = Number(document.getElementById("num1").value);
+    let num2 = Number(document.getElementById("num2").value);
+    switch (operation) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+    }
+    document.getElementById("result").innerHTML = result;
 }
 
 
-function  counterIncrement () {
-    nums.value = ++counterValue
-    disableButtons()
+
+
+const btn = document.querySelectorAll('.btn > span');
+for (let i = 0; i < btn.length; i++) {
+
+    btn[i].addEventListener('click', function() {
+        this.innerHTML =
+            (this.innerHTML === 'Показать ответ') ? this.innerHTML = 'Скрыть ответ' : this.innerHTML = 'Показать ответ';
+    })
+
 }
 
-function  counterDecrement () {
-    nums.value = --counterValue
-    disableButtons()
+
+let successButtons = document.querySelectorAll('.btn-outline-success')
+for (let button of successButtons){
+    button.onclick = function() {
+        this.parentNode.classList.toggle('hidden')
+        }
 }
-
-buttonInc.onclick = counterIncrement
-buttonDec.onclick = counterDecrement
-
 

@@ -3,16 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class='calculation'>
+  <input id="num1"/>
+  <div id="operator_btns">
+    <button class="calculator_btn" id="plus" onclick="operation='+'">+</button>
+    <button class="calculator_btn" id="minus" onclick="operation='-'">-</button>
+    <button  class="calculator_btn" id="times" onclick="operation='*'">x</button>
+    <button  class="calculator_btn" id="divide" onclick="operation='/'">:</button>
+  </div>
+  <input id="num2"/>
+  <br>
 
-<div class="counter">
-    <button id="button_dec" type="button" class="counter-wrap">-</button>
-    <input id="counter_value" disabled  class="number" value="0" placeholder="0">
-    <button id="button_inc" type="button" class="counter-wrap">+</button>
+  <button onclick="func()">Посчитать</button>
+
+  <p id="result"></p>
+
 </div>
+
+<div class="container">
+  <div class="puzzle hidden">
+    <p>Без шофера, без колес, а домой меня привез</p>
+    <p class="answer">Лифт</p>
+    <button type="button"  class="btn btn-outline-success" data-toggle="collapse" data-target="#services"><span>Показать ответ</span></button>
+  </div>
+  <div class="puzzle hidden">
+    <p>Двенадцать братьев, друг за другом бродят,друг друга не обходят.</p>
+    <p class="answer">Месяцы</p>
+    <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#services"><span>Показать ответ</span></button>
+  </div>
+  <div class="puzzle hidden">
+    <p>Он может разрушить корабль, но боится солнца.</p>
+    <p class="answer">Айсберг</p>
+    <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#services"><span>Показать ответ</span></button>
+  </div>
+  <div class="puzzle hidden">
+    <p>Крикнешь – откликается, от людей прячется.</p>
+    <p class="answer">Эхо</p>
+    <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#services"><span>Показать ответ</span></button>
+  </div>
+  <div class="puzzle hidden">
+    <p>Без ног и без крыльев оно, быстро летит, не догонишь его.</p>
+    <p class="answer">Время</p>
+    <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#services"><span>Показать ответ</span></button>
+  </div>
+  <div class="puzzle hidden">
+    <p>По какому пути никто никогда не ходил и не ездил?</p>
+    <p class="answer">По млечному</p>
+    <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#services"><span>Показать ответ</span></button>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>
