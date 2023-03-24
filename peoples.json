@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Harry",
+    "age": 28,
+    "url": "image/man.png"
+
+
+  },
+  {
+    "name": "Grace",
+    "age": 25,
+    "url": "image/woman.png"
+  },
+  {
+    "name": "Caroline",
+    "age": 20,
+    "url": "image/girl.png"
+  }
+]
