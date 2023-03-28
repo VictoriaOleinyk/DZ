@@ -4,38 +4,46 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .user{
-            width: 320px;
-            height: 320px;
-            border: 1px solid;
-            text-align: center;
-            margin-top: 20px;
-        }
-        img{
-            width: 200px;
-            height: 200px;
-            margin-top: 20px;
-        }
-        .wrapper {
+        body{
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap;
+            justify-content: center;
+            height: 100vh;
         }
-        span{
+        .wrapper > div {
+            display: flex;
+            flex-direction: column;
+        }
+        .usd  {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        input {
+            padding: 10px 20px ;
+        }
+        label {
             font-size: 20px;
         }
-
     </style>
 </head>
 <body>
-
 <div class="wrapper">
+    <div class="kgs">
+        <label for="kgs"> kgs </label>
+        <input type="number" id="kgs">
+    </div>
+    <div class="usd">
+        <label for="usd"> Usd </label>
+        <input type="number" id="usd">
+    </div>
+    <div class="euro">
+        <label for="euro"> Euro </label>
+        <input type="number" id="euro">
+    </div>
+
 
 </div>
-<button class="btn">get users</button>
+
 </body>
 <script src="main.js"></script>
 </html>
-
-
