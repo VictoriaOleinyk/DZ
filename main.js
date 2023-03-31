@@ -1,92 +1,52 @@
-const kgs = document.querySelector('#kgs')
-const usd = document.querySelector('#usd')
-const euro = document.querySelector('#euro')
 
-let response = null
-const loadCurrenses =  () => {
-    const request = new XMLHttpRequest()
-    request.open("GET", "data.json")
-    request.setRequestHeader("Content-type", "application/json")
-    request.send()
-    request.onload = () => {
-        response = JSON.parse(request.response)
+const block = document.querySelector('.block')
+const btnPrev = document.querySelector('.prev')
+const btnNext = document.querySelector('.next')
+
+let count = 1
+
+function disableButtons (){
+    btnPrev.disabled = count <= 1
+    btnNext.disabled = count >= 200
+}
+
+const cardText = () => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+        .then(response => response.json())
+        .then (data => {
+            block.innerHTML = `
+            <h2>${data.title}/</h2>
+            <span>${data.id}</span>
+            <h3>${data.completed}</h3>
+            `
+})
+}
+
+function cardChange () {
+    const div = document.querySelector('div');
+    div.addEventListener('click', (event) => {
+    if (event.target.classList.contains('next')){
+        count++;
+        disableButtons()
+        cardText();
+    } else {
+        count--;
+        disableButtons()
+        cardText()
     }
-}
-loadCurrenses()
-
-
-
-const currencyConverter = (value, from, to) => {
-
-        if (from === "kgs") {
-            if (to === "usd") {
-                return value / response.usd
-            }
-            if (to === "euro") {
-                return value / response.euro
-            }
-            return value
-        }
-        if (from === "usd") {
-            if (to === "kgs") {
-                return value * response.usd
-            }
-            if (to === "euro") {
-                return value * response.usd / response.euro
-            }
-            return value
-        }
-        if (from === "euro") {
-            if (to === "kgs") {
-                return value * response.euro
-            }
-            if (to === "usd") {
-                return value * response.euro / response.usd
-            }
-            return value
-        }
-
+    })
 }
 
+cardChange()
 
-const convert = (event) => {
-    let element = event.target
-    let value = parseInt(element.value)
-    let from = element.id
-    if (from != "kgs")
-        kgs.value = currencyConverter(value, from, "kgs").toFixed(2)
-    if (from != "usd")
-        usd.value = currencyConverter(value, from, "usd").toFixed(2)
-    if (from != "euro")
-        euro.value = currencyConverter(value, from, "euro").toFixed(2)
-}
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
 
-for ( const input of document.querySelectorAll("input")) {
-    input.oninput = convert
-}
 
-// const convert = (elem, target, target2, isTrue) => {
-//     elem.oninput = () => {
-//         const request = new XMLHttpRequest()
-//         request.open("GET", "data.json")
-//         request.setRequestHeader("Content-type", "application/json")
-//         request.send()
-//         request.onload = () => {
-//             const response = JSON.parse(request.response)
-//             if (isTrue) {
-//                 target.value = ( elem.value / response.usd).toFixed(2)
-//                 target2.value = ( elem.value / response.euro).toFixed(2)
-//             } else {
-//                 target.value = ( elem.value * response.usd).toFixed(2)
-//                 target2.value = ( elem.value * response.usd_euro).toFixed(2)
-//             }
-//             elem.value === '' && (target.value = '')
-//             // elem.value === '' && (target2.value = '')
-//         }
-//     }
-// }
-//
-// convert(som, usd, euro, true)
-// convert( usd, som, euro,false)
+
+
 
 
