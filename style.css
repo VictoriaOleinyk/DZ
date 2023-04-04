@@ -1,0 +1,142 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+header.menu {
+  background-color: #638da3;
+
+}
+
+.container{
+  width: 1240px;
+  margin: 0 auto
+}
+input{
+  width: 200px;
+  height: 30px;
+  border-radius: 100px;
+  cursor: pointer;
+  outline: none;
+  padding-left: 25px;
+  margin-top: 7px;
+
+}
+
+.text{
+  width: 220px;
+  height: 325px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+p{
+  text-align: justify;
+  padding-top: 10px;
+}
+h3{
+  padding-top: 10px;
+}
+img{
+  width: 200px;
+  height: 150px;
+
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+
+}
+span{
+  font-size: 20px;
+}
+
+
+.menu {
+  height: 60px;
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+}
+.menu_inner {
+  display: flex;
+  justify-content: space-between;
+}
+.menu_inner .logo {
+  width: 79px;
+  height: 24px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+.menu_inner .link {
+  padding-bottom: 23px;
+  padding-top: 23px;
+}
+.menu_inner .link ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 800px;
+  height: 14px;
+  align-items: center;
+}
+.menu_inner .link ul li {
+  list-style-type: none;
+}
+.menu_inner .link ul li a {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 14px;
+  color: #1C1C1C;
+  text-decoration: none;
+}
+.menu_inner .link ul li a:hover {
+  text-decoration: underline;
+}
+.menu_inner .button_menu {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.menu_inner .button_menu button {
+  width: 157px;
+  height: 40px;
+  background-color: #5a27c0;
+  border-radius: 50px;
+  outline: none;
+  border: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+}
+
+.footer {
+  background-color: #638da3;
+}
+.info {
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+ul{
+  font-size: 18px
+}
+li{
+  list-style-type: none;
+}
+a{
+  color: #1C1C1C;
+}
+.title {
+  text-align: center;
+  padding-bottom: 10px;
+}
